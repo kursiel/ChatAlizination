@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebSocketManager;
 
 namespace ChatAlizination
 {
@@ -30,13 +31,13 @@ namespace ChatAlizination
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
+            services.AddWebSocketManager();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider)
         {
             if (env.IsDevelopment())
             {
@@ -47,6 +48,9 @@ namespace ChatAlizination
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
+
+            app.UseWebSockets();
+            app.MapWebSocketManager("/ChatAlizination", serviceProvider.GetRequiredService<ChatHandler>());
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

@@ -3,6 +3,7 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background: #e8e8e8;
 }
 
 /* Wrapping element */
@@ -10,6 +11,19 @@ body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+#messages{
+    background: white;
+    position: relative;
+    height: 40vh;
+    max-height: 40vh;
+    overflow-y: auto;
+}
+
+/*top-space*/
+.top-space {
+    margin-top: 20px;
 }
 
 /* Carousel */

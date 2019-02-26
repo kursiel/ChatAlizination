@@ -13,11 +13,25 @@ body {
     padding-right: 15px;
 }
 
-#messages{
+messages{
     background: white;
     position: relative;
     height: 40vh;
     max-height: 40vh;
+    overflow-y: auto;
+}
+
+.list-group {
+    background: white;
+    height: 80vh;
+    max-height: 80vh;
+    border-radius: 13px 13px 13px 13px;
+    -moz-border-radius: 13px 13px 13px 13px;
+    -webkit-border-radius: 13px 13px 13px 13px;
+
+    -webkit-box-shadow: -2px 3px 5px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: -2px 3px 5px 1px rgba(0,0,0,0.75);
+    box-shadow: -2px 3px 5px 1px rgba(0,0,0,0.75);
     overflow-y: auto;
 }
 

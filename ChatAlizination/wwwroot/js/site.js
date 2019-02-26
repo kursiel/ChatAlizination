@@ -22,6 +22,8 @@ $(document).ready(function () {
         $('#messages').scrollTop($('#messages').prop('scrollHeight'));
     }
 
+    $('#messages').scrollTop($('#messages').prop('scrollHeight'));
+
     var $messagecontent = $('#message-content');
     $messagecontent.keyup(function (e) {
         if (e.keyCode == 13) {
@@ -35,6 +37,8 @@ $(document).ready(function () {
             $messagecontent.val('');
         }
     });
-
+    $('#messages').scrollTop($('#messages').prop('scrollHeight'));
     connection.start();
+ 
+
 });

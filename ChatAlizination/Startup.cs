@@ -32,6 +32,7 @@ namespace ChatAlizination
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
             services.AddWebSocketManager();
+            services.AddSingleton<ChatManager>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
